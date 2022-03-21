@@ -110,29 +110,34 @@ function generatePassword() {
     return "try again";
   }
 
-  //   var useLowercase = confirm("Please include Lowercase");
-  //   if (useLowercase)
-  //     allowedCharacters = [...allowedCharacters, ...lowerCasedCharacters];
-  //   //   console.log(allowedCharacters);
-
-  //   var useUppercase = confirm("Please include Uppercase");
-  //   if (useUppercase)
-  //     allowedCharacters = [...allowedCharacters, ...upperCasedCharacters];
-  //   //   console.log(allowedCharacters);
-
-  //   var useNumbers = confirm("Please include Numbers");
-  //   if (useNumbers)
-  //     allowedCharacters = [...allowedCharacters, ...numericCharacters];
-  //   //   console.log(allowedCharacters);
-
-  //   var useSpecialCharacters = confirm("Please include Special Characters");
-  //   if (useSpecialCharacters)
-  //     allowedCharacters = [...allowedCharacters, ...specialCharacters];
-
+  var useLowercase = confirm("Please include Lowercase");
+  if (useLowercase)
+    allowedCharacters = [...allowedCharacters, ...lowerCasedCharacters];
   //   console.log(allowedCharacters);
 
+  var useUppercase = confirm("Please include Uppercase");
+  if (useUppercase)
+    allowedCharacters = [...allowedCharacters, ...upperCasedCharacters];
+  //   console.log(allowedCharacters);
+
+  var useNumbers = confirm("Please include Numbers");
+  if (useNumbers)
+    allowedCharacters = [...allowedCharacters, ...numericCharacters];
+  //   console.log(allowedCharacters);
+
+  var useSpecialCharacters = confirm("Please include Special Characters");
+  if (useSpecialCharacters)
+    allowedCharacters = [...allowedCharacters, ...specialCharacters];
+
+  console.log(allowedCharacters);
+
   for (var i = 0; i < passwordLength; i++) {
-    console.log(i);
+    // console.log(i);
+    //generate a random number btweeen 0 and allowedCharacters.length
+    // Returns a random integer from 0 to 9:
+    var randomIndex = Math.floor(Math.random() * allowedCharacters.length);
+    console.log(allowedCharacters[randomIndex]);
+    finalPassword += allowedCharacters[randomIndex];
   }
 
   return finalPassword;
